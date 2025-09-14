@@ -62,7 +62,7 @@ mongoose.connect(process.env.MONGO_URL as string)
 app.use("/api/v1/users", userRoutes);
 
 // Start server
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
