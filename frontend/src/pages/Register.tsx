@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { BACKEND_URL } from "../config";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -48,7 +49,7 @@ const Register = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:3000/api/v1/users/register",
+        `${BACKEND_URL}/api/v1/users/register`,
         payload
       );
 

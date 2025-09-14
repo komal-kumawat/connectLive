@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from '../context/AuthContext';
-
+import { BACKEND_URL } from '../config';
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/users/login",
+        `${BACKEND_URL}/api/v1/users/login`,
         { username: email, password }
       );
 
